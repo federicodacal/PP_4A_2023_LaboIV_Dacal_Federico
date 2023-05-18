@@ -1,0 +1,10 @@
+<div class="scroll">
+    <div class="row paises" *ngFor="let pais of paises" (click)="seleccionarPais(pais)">
+      <div class="col">
+        <b>{{pais.name.common}}</b>
+      </div>
+      <div class="col mb-2">
+        <img [src]="pais.flags.png" alt="flag" style="width: 30px; height: 20px;"/>
+      </div>
+    </div>
+  </div>

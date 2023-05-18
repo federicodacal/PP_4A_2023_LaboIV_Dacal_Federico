@@ -1,0 +1,68 @@
+<div class="col-md-7 col-lg-8">
+    <h4 class="mb-3">INFORMACIÓN PRODUCTO</h4>
+    <form [formGroup]="forms" (ngSubmit)="guardarProducto()">
+      <div class="row g-3">
+        <div class="col-sm-12">
+          <label for="codigo" class="form-label">Codigo</label>
+          <input type="text" class="form-control" id="codigo" placeholder="" value="" formControlName="codigo" maxlength="8">
+          <small style="color: red; font-weight: bold;"
+          *ngIf="this.forms.get('codigo')?.invalid && this.forms.get('codigo')?.touched">
+          El codigo es requerido</small>
+        </div>
+  
+        <div class="col-sm-12">
+          <label for="descripcion" class="form-label">Descripcion</label>
+          <input type="text" class="form-control" id="descripcion" placeholder="" value="" formControlName="descripcion" maxlength="24">
+          <small style="color: red; font-weight: bold;"
+          *ngIf="this.forms.get('descripcion')?.invalid && this.forms.get('descripcion')?.touched">
+          La descripcion es requerida</small>
+        </div>
+  
+        <div class="col-sm-6">
+          <label for="precio" class="form-label">Precio</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text">$</span>
+            <input type="number" class="form-control" id="precio" placeholder="" formControlName="precio" min="1">
+          </div>
+          <small style="color: red; font-weight: bold;"
+          *ngIf="this.forms.get('precio')?.invalid && this.forms.get('precio')?.touched">
+          El precio es requerido</small>
+        </div>
+  
+        <div class="col-sm-6">
+          <label for="stock" class="form-label">Stock</label>
+          <input type="number" class="form-control" id="stock" placeholder="" formControlName="stock" min="1">
+          <small style="color: red; font-weight: bold;"
+            *ngIf="this.forms.get('stock')?.invalid && this.forms.get('stock')?.touched">
+            El stock es requerido</small>
+        </div>
+  
+        <div class="col-sm-12">
+          <label for="comestible" class="form-label">Comestible</label>
+            <select class="form-select" aria-label="Default select example" formControlName="comestible">
+              <option selected disabled value="">S/N</option>
+              <option value="si">Si</option>
+              <option value="no">No</option>
+            </select>
+            <small style="color: red; font-weight: bold;"
+            *ngIf="this.forms.get('comestible')?.invalid && this.forms.get('comestible')?.touched">
+            Es requerido indicar si es o no comestible</small>
+        </div>
+  
+        <div class="col-sm-12">
+          <label for="pais" class="form-label">Pais</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text"> 
+              <img *ngIf="paisForm" [src]="paisForm.flags.png" alt="flag" [ngStyle]="{'width':'1.5rem'}">
+            </span>
+            <input type="text" class="form-control" id="pais" [placeholder]="paisForm.name.common" formControlName="paisDeOrigen" [ngModel]="paisForm.name.common">
+          </div>
+          <small style="color: red; font-weight: bold;"
+          *ngIf="this.forms.get('paisDeOrigen')?.invalid && this.forms.get('paisDeOrigen')?.touched">
+          El pais de origen es requerido</small>
+        </div>
+      </div>
+  
+      <hr class="my-4">
+      <button class="w-100 btn btn-primary btn-lg" type="submit">Continuar</button>
+    </form>

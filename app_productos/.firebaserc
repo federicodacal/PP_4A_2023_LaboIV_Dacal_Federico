@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "parcial-labo-ec771": {
+      "hosting": {
+        "app_productos": [
+          "parcial-labo-ec771"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "parcial-labo-ec771"
+  }
+}

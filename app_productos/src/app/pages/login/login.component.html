@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+  
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img [src]="loginIcon" id="icon" alt="icon" />
+      </div>
+      
+      <!-- Login Form -->
+      <form (ngSubmit)="ingresar()">
+        <input type="text" id="user" class="fadeIn second" name="user" placeholder="User" [(ngModel)]="user">
+        <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password" [(ngModel)]="password">
+        <select (change)="onChange($event)" class="form-select" aria-label="Default select example" class="fadeIn fourth">
+            <option selected disabled value="">Acceso rápido</option>
+            <option value="admin">Admin</option>
+            <option value="empleado">Empleado</option>
+          </select>
+        <input type="submit" class="fadeIn fourth" value="Log In">
+      </form>
+    
+    </div>
+</div>

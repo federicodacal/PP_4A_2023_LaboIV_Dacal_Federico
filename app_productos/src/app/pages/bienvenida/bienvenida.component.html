@@ -1,0 +1,36 @@
+<app-navbar></app-navbar>
+<main>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 mb-4 mb-sm-5">
+                    <div class="border-0">
+                        <div class="card-body p-1-9 p-sm-2-3 p-md-6 p-lg-7">
+                            <div class="row align-items-center">
+                                <div *ngIf="!loading" class="col-lg-6 mb-4 mb-lg-0">
+                                    <img [src]="perfilGithub.avatar_url" alt="profile av" [ngStyle]="{'width':'16.5rem'}">
+                                </div>
+                                <div class="col-lg-6 px-xl-10">
+                                    <div class="bg-secondary d-lg-inline-block py-1-9 px-1-9 px-sm-6 mb-1-9 rounded">
+                                        <h3 class="h2 text-white mb-0">{{perfilGithub.name}}</h3>
+                                        <span class="text-info"><b>Programador</b></span>
+                                    </div>
+                                    <ul class="list-unstyled mb-1-9">
+                                        <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Usuario:</span> {{perfilGithub.login}}</li>
+                                        <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Ubicacion:</span> {{perfilGithub.location}}</li>
+                                        <li class="mb-2 mb-xl-3 display-28"><span class="display-26 text-secondary me-2 font-weight-600">Educacion:</span> {{perfilGithub.bio}}</li>
+                                        <li>
+                                            <a [href]="perfilGithub.html_url" target="_blank">
+                                                <i class="fa-brands fa-github"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

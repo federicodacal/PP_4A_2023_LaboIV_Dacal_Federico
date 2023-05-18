@@ -1,0 +1,41 @@
+<div>
+  <form [formGroup]="forms" (ngSubmit)="borrarContainer()">
+    <div class="row g-3">
+      <div class="col-sm-12">
+        <label for="codigo" class="form-label">Codigo</label>
+        <input type="text" class="form-control" id="codigo" placeholder="" value="" formControlName="codigo" maxlength="8">
+        <small style="color: red; font-weight: bold;"
+        *ngIf="this.forms.get('codigo')?.invalid && this.forms.get('codigo')?.touched">
+        El codigo es requerido</small>
+      </div>
+
+      <div class="col-sm-12">
+        <label for="color" class="form-label">Color</label>
+        <input type="text" class="form-control" id="color" placeholder="" value="" formControlName="color" maxlength="24">
+        <small style="color: red; font-weight: bold;"
+        *ngIf="this.forms.get('color')?.invalid && this.forms.get('color')?.touched">
+        El color es requerida</small>
+      </div>
+
+      <div class="col-sm-12">
+        <label for="empresa" class="form-label">Empresa</label>
+        <input type="text" class="form-control" id="empresa" placeholder="" value="" formControlName="empresa" maxlength="24">
+        <small style="color: red; font-weight: bold;"
+        *ngIf="this.forms.get('empresa')?.invalid && this.forms.get('empresa')?.touched">
+        La empresa es requerida</small>
+      </div>
+
+      <div class="col-sm-12">
+        <label for="capacidad" class="form-label">Capacidad</label>
+        <div class="input-group has-validation">
+          <input type="number" class="form-control" id="capacidad" placeholder="" formControlName="capacidad" min="1">
+        </div>
+        <small style="color: red; font-weight: bold;"
+        *ngIf="this.forms.get('capacidad')?.invalid && this.forms.get('capacidad')?.touched">
+        El capacidad es requerida</small>
+      </div>
+
+    </div>  
+    <hr class="my-4">
+    <button class="w-100 btn btn-danger btn-lg" type="submit">Borrar</button>
+  </form>

@@ -6,6 +6,8 @@ import { ProductoAltaComponent } from './pages/producto-alta/producto-alta.compo
 import { LoginGuard } from './guards/login.guard';
 import { ProductoDetalleComponent } from './pages/producto-detalle/producto-detalle.component';
 import { ProductoListadoPublicoComponent } from './pages/producto-listado-publico/producto-listado-publico.component';
+import { ContainerComponent } from './pages/container/container.component';
+import { PerfilesGuard } from './guards/perfiles.guard';
 
 const routes: Routes = [
   {path: 'bienvenido', component:BienvenidaComponent },
@@ -13,6 +15,7 @@ const routes: Routes = [
   {path: 'alta-producto', component:ProductoAltaComponent, canActivate: [LoginGuard] },
   {path: 'detalle-producto', component:ProductoDetalleComponent, canActivate: [LoginGuard] },
   {path: 'listado-publico', component:ProductoListadoPublicoComponent },
+  {path: 'container', component:ContainerComponent, canActivate: [PerfilesGuard] },
   {path: '', component:BienvenidaComponent }
 ];
 

@@ -1,0 +1,39 @@
+<app-navbar></app-navbar>
+<div class="container py-3">
+  <main>
+    <h2 class="display-6 text-center mb-4">LISTADO</h2>
+    <div class="col-sm-12">
+      <app-container-listado [listadoRecibido]="listadoContainers" (eventSeleccionarContainer)="detallarContainerSeleccionado($event)"></app-container-listado>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">ALTA</h4>
+            <app-container-alta (eventCreamosContainer)="agregarContainer($event)"></app-container-alta>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">MODIFICAR</h4>
+            <app-container-modificacion [containerRecibido]="containerSeleccionado" (eventModificamosContainer)="modificarContainer($event)"></app-container-modificacion>
+          </div>
+
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">ELIMINAR</h4>
+            <app-container-borrar [containerRecibido]="containerSeleccionado" (eventBorramosContainer)="borrarContainer($event)"></app-container-borrar>
+          </div>
+     
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>

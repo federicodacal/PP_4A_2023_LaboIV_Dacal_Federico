@@ -7,15 +7,14 @@ import Swal from 'sweetalert2';
 @Injectable({
   providedIn: 'root'
 })
-export class LoginGuard implements CanActivate {
+export class PerfilesGuard implements CanActivate {
 
   constructor(private auth:AuthService, private router:Router) { }
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      if(this.auth.log()) {    
-        this.auth.logeado = true;
+      if(this.auth.esAdmin()) {    
         return true;
        }
        else {

@@ -2,7 +2,7 @@
     <div class="container mb-3">
       <nav class="navbar navbar-expand-lg navbar-light bg-light rounded" aria-label="Eleventh navbar example">
         <div class="container-fluid">
-          <a class="navbar-brand" routerLink="">Primer Parcial</a>
+          <a class="navbar-brand" routerLink="">Primer Parcial | F. Dacal</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -29,7 +29,11 @@
               </li>
              
               <li class="nav-item">
-                <a class="nav-link" routerLink="" (click)="logout()">Salir</a>
+                <a class="nav-link" routerLink="/container">ABM Container</a>
+              </li>
+
+              <li class="nav-item">
+                <a *ngIf="statusLog" class="nav-link text-danger" routerLink="/login" (click)="logout()"><b>Salir</b></a>
               </li>
             </ul>
           </div>

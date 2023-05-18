@@ -7,14 +7,17 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 })
 export class AuthService {
 
-  constructor(private auth:AngularFireAuth) { }
+  logeado:boolean = false;
+
+  constructor(private authentication:AngularFireAuth) { }
 
   login(mail:string, password:string) {
-    return this.auth.signInWithEmailAndPassword(mail, password);
+    return this.authentication.signInWithEmailAndPassword(mail, password);
   }
 
   logout() {
-    return this.auth.signOut();
+    this.logeado = false;
+    return this.authentication.signOut();
   }
 
   log():boolean {
@@ -22,6 +25,18 @@ export class AuthService {
     const user = authentication.currentUser;
 
     if(user) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
+  esAdmin():boolean {
+    const authentication = getAuth();
+    const user = authentication.currentUser;
+
+    if(user?.email == 'admin@admin.com') {
       return true;
     }
     else {

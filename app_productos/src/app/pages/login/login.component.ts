@@ -25,6 +25,7 @@ export class LoginComponent {
           'Sesión iniciada',
           'success'
           );
+          this.auth.logeado = true;
           this.router.navigate(['/bienvenido']);
         })
         .catch(() => {

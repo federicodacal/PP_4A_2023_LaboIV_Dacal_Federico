@@ -17,6 +17,10 @@ import { ProductoAltaComponent } from './pages/producto-alta/producto-alta.compo
 import { ProductoFormComponent } from './components/producto-form/producto-form.component';
 import { ProductoListadoComponent } from './components/producto-listado/producto-listado.component';
 import { PaisListadoComponent } from './components/pais-listado/pais-listado.component';
+import { ProductoDetalleComponent } from './pages/producto-detalle/producto-detalle.component';
+import { PaisDetalleComponent } from './components/pais-detalle/pais-detalle.component';
+import { ProductoInfoComponent } from './components/producto-info/producto-info.component';
+import { ProductoListadoPublicoComponent } from './pages/producto-listado-publico/producto-listado-publico.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +32,10 @@ import { PaisListadoComponent } from './components/pais-listado/pais-listado.com
     ProductoFormComponent,
     ProductoListadoComponent,
     PaisListadoComponent,
+    ProductoDetalleComponent,
+    PaisDetalleComponent,
+    ProductoInfoComponent,
+    ProductoListadoPublicoComponent,
   ],
   imports: [
     BrowserModule,

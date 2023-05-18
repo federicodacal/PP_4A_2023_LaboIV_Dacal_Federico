@@ -1,0 +1,11 @@
+<div *ngIf="productoRecibido" class="card" style="width: 17.5rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{productoRecibido.descripcion}}</h5>
+      <p class="card-text">
+        Codigo: {{productoRecibido.codigo}} <br>
+        Precio: ${{productoRecibido.precio}} <br>
+        Stock: {{productoRecibido.stock}} <br>
+        Comestible: {{productoRecibido.comestible ? 'Si' : 'No'}} <br>
+      </p>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<app-navbar></app-navbar>
+<main>
+    <div class="container py-4">
+      <header class="pb-3 mb-4 border-bottom">
+        <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+          <img src="../../../assets/img/producto.png" alt="cart" width="40" height="32" class="me-2" viewBox="0 0 118 94">
+          <span class="fs-4">DETALLE PRODUCTOS</span>
+        </a>
+      </header>
+  
+      <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+          <h1 class="display-5 fw-bold">Productos</h1>
+        
+          <div *ngIf="loading" class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+          
+          <app-producto-listado [listadoRecibido]="listadoProductos"
+          (eventSeleccionarProducto)="detallarProductoSeleccionado($event)">
+        </app-producto-listado>
+
+        </div>
+      </div>
+  
+      <div class="row align-items-md-stretch">
+        <div class="col-md-6">
+          <div class="h-100 p-5 text-white bg-dark rounded-3">
+            <h2>Detalle</h2>
+            <app-producto-info [productoRecibido]="productoSeleccionado">
+            </app-producto-info>
+          </div>
+        </div>
+  
+        <div class="col-md-6">
+          <div class="h-100 p-5 bg-light border rounded-3">
+            <h2>Pais</h2>
+            <app-pais-detalle [productoRecibido]="productoSeleccionado"></app-pais-detalle>
+          </div>
+        </div>
+      </div>
+  
+      <footer class="pt-3 mt-4 text-muted border-top" [ngStyle]="{'text-align':'center'}">
+        UTN-Fra &copy; 2023
+      </footer>
+    </div>
+  </main>

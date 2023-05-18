@@ -11,6 +11,11 @@ export class ProductosService {
 
   constructor(private firestore:Firestore) { }
 
+  traer() {
+    const collectionRef = collection(this.firestore, 'productos');
+    return collectionData(collectionRef, {idField:'id'}) as Observable<Producto[]>;
+  }
+
   agregar(p:Producto) {
     const collectionRef = collection(this.firestore, 'productos');
     return addDoc(collectionRef, {codigo: p.codigo, descripcion: p.descripcion, precio: p.precio, stock: p.stock, paisDeOrigen: p.paisDeOrigen, bandera: p.bandera, comestible: p.comestible});

@@ -16,7 +16,7 @@ export class ProductoInfoComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    console.info(this.productoRecibido);
+    console.info('Desde producto-info',this.productoRecibido);
   }
 
 }

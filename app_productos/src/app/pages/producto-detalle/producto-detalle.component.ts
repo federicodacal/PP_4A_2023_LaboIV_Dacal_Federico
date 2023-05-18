@@ -18,6 +18,7 @@ export class ProductoDetalleComponent implements OnInit, OnDestroy {
   constructor(private productoService:ProductosService) { }
 
   ngOnInit(): void {
+    this.productoSeleccionado = null;
     this.loading = true;
     this.traerProductos();
   }
@@ -35,6 +36,7 @@ export class ProductoDetalleComponent implements OnInit, OnDestroy {
   }
 
   detallarProductoSeleccionado($event:any) {
+    console.info('Desde producto-detalle', $event);
     this.productoSeleccionado = $event;
   }
 
